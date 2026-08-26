@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +10,14 @@
             padding: 0;
             box-sizing: border-box;
         }
- 
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: white;
             color: #000;
             line-height: 1.6;
         }
- 
+
         .print-button {
             position: fixed;
             top: 20px;
@@ -34,17 +33,17 @@
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
- 
+
         .print-button:hover {
             background: #8B3A52;
         }
- 
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
- 
+
         .header {
             background: #6B2737;
             color: white;
@@ -52,17 +51,17 @@
             text-align: center;
             margin: -20px -20px 30px -20px;
         }
- 
+
         .header h1 {
             font-size: 36px;
             margin-bottom: 10px;
         }
- 
+
         .header .subtitle {
             font-size: 20px;
             margin-bottom: 20px;
         }
- 
+
         .compliance-box {
             background: rgba(255,255,255,0.1);
             border: 2px solid rgba(255,255,255,0.3);
@@ -70,7 +69,7 @@
             padding: 15px;
             margin-top: 20px;
         }
- 
+
         .date-key-box {
             background: #FFE6E6;
             border-left: 5px solid #6B2737;
@@ -79,12 +78,12 @@
             border-radius: 5px;
             text-align: center;
         }
- 
+
         .date-key-box strong {
             font-size: 18px;
             color: #6B2737;
         }
- 
+
         .legend-note {
             display: block;
             font-size: 14px;
@@ -92,7 +91,7 @@
             margin-top: 8px;
             font-weight: normal;
         }
- 
+
         .school-links-section {
             background: #6B2737;
             color: white;
@@ -101,12 +100,12 @@
             border-radius: 10px;
             text-align: center;
         }
- 
+
         .school-links-section h2 {
             font-size: 24px;
             margin-bottom: 15px;
         }
- 
+
         .link-buttons {
             display: flex;
             justify-content: center;
@@ -114,7 +113,7 @@
             margin-top: 25px;
             flex-wrap: wrap;
         }
- 
+
         .school-link {
             background: white;
             color: #6B2737;
@@ -126,16 +125,16 @@
             min-width: 280px;
             transition: all 0.3s;
         }
- 
+
         .school-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
- 
+
         .assessment-section {
             margin: 40px 0;
         }
- 
+
         .section-title {
             background: #6B2737;
             color: white;
@@ -144,18 +143,18 @@
             font-weight: bold;
             border-radius: 8px 8px 0 0;
         }
- 
+
         .section-title .section-note {
             font-size: 14px;
             font-weight: normal;
             font-style: italic;
         }
- 
+
         .table-scroll {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
- 
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -164,7 +163,7 @@
             table-layout: fixed;
             min-width: 900px;
         }
- 
+
         th {
             background: #E8E8E8;
             padding: 12px;
@@ -173,21 +172,21 @@
             border: 1px solid #ccc;
             font-size: 14px;
         }
- 
+
         td {
             padding: 10px;
             border: 1px solid #ddd;
             font-size: 13px;
         }
- 
+
         tr:nth-child(even) {
             background: #f9f9f9;
         }
- 
+
         tr:hover {
             background: #f0f0f0;
         }
- 
+
         .date-range {
             background: #F5E6E8;
             color: #6B2737;
@@ -198,13 +197,13 @@
             margin: 2px 0;
             white-space: nowrap;
         }
- 
+
         .date-range.proposed {
             background: #FFF2B2;
             color: #6B4A00;
             border: 1px solid #E6C200;
         }
- 
+
         .grade-level {
             background: #E8E8E8;
             padding: 2px 6px;
@@ -212,7 +211,7 @@
             display: inline-block;
             margin: 1px;
         }
- 
+
         .status-confirmed {
             display: block;
             font-size: 11px;
@@ -220,16 +219,16 @@
             font-weight: bold;
             margin-top: 3px;
         }
- 
+
         a {
             color: #6B2737;
             text-decoration: none;
         }
- 
+
         a:hover {
             text-decoration: underline;
         }
- 
+
         .info-box {
             background: #F5F5F5;
             padding: 20px;
@@ -237,62 +236,62 @@
             border-left: 4px solid #6B2737;
             border-radius: 5px;
         }
- 
+
         .info-box ul {
             margin-left: 20px;
         }
- 
+
         .info-box h3 {
             margin-bottom: 10px;
         }
- 
+
         .ap-note {
             font-size: 13px;
             padding: 12px 4px 0 4px;
             font-style: italic;
         }
- 
+
         .footer {
             background: #E8E8E8;
             padding: 30px;
             text-align: center;
             margin: 40px -20px -20px -20px;
         }
- 
+
         @media print {
             .print-button {
                 display: none !important;
             }
- 
+
             body {
                 font-size: 11pt;
             }
- 
+
             .header, .school-links-section, .section-title {
                 background: #6B2737 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
                 color: white !important;
             }
- 
+
             .date-range, .date-range.proposed, .grade-level, .date-key-box {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
- 
+
             .table-scroll {
                 overflow-x: visible;
             }
- 
+
             table {
                 min-width: 0;
                 page-break-inside: auto;
             }
- 
+
             .assessment-section {
                 page-break-inside: avoid;
             }
- 
+
             tr {
                 page-break-inside: avoid;
             }
@@ -303,7 +302,7 @@
     <button class="print-button" onclick="window.print()">
         📄 Click Here to Save as PDF
     </button>
- 
+
     <div class="container">
         <div class="header">
             <h1>Assessment Calendar 2026-2027</h1>
@@ -313,37 +312,35 @@
                 This calendar provides required notification of all statewide and district assessments for the 2026-2027 school year. To be published by October 1, 2026.
             </div>
         </div>
- 
+
         <div class="date-key-box">
             <strong>📅 DATE KEY: F = Fall | W = Winter | S = Spring/Summer</strong>
             <span class="legend-note">
                 Windows shown in <span class="date-range proposed">yellow</span> are <strong>proposed</strong> or pending confirmation and will be finalized prior to the October 1, 2026 publication.
             </span>
         </div>
- 
+
         <div class="school-links-section">
             <h2>📚 School-Specific Assessment Administration Schedules 📚</h2>
             <p>For comprehensive information including precise testing dates, designated testing times, specific subject areas, and detailed grade-level requirements for your child's school, please consult the appropriate school-specific assessment calendar:</p>
             <div class="link-buttons">
-                <!-- TODO: replace href="#" below with the 2026-27 Elementary Google Drive share link -->
-                <a href="#" target="_blank" class="school-link">
+                <a href="https://drive.google.com/file/d/1DlcHWezUEKrlSHbzGhHFd7QHWITJ1r6p/view?usp=drive_link" target="_blank" class="school-link">
                     📘 Elementary Assessment Calendar<br>
                     BBOED 2026-2027 - Public Edition<br>
                     <small>(Grades K-8)</small>
                 </a>
-                <!-- TODO: replace href="#" below with the 2026-27 High School Google Drive share link -->
-                <a href="#" target="_blank" class="school-link">
+                <a href="https://drive.google.com/file/d/1HXnf_NJDo2Oy8MGE9ucU6OoZBvBZHmdx/view?usp=drive_link" target="_blank" class="school-link">
                     📕 High School Assessment Calendar<br>
                     BBOED 2026-2027 - Public Edition<br>
                     <small>(Grades 9-12)</small>
                 </a>
             </div>
         </div>
- 
+
         <div class="info-box">
             <strong>Important Notice:</strong> This calendar is subject to change. While we strive to maintain accuracy, dates and events may be adjusted due to unforeseen circumstances or administrative decisions. We recommend checking for updates regularly and confirming important dates as they approach.
         </div>
- 
+
         <!-- State Assessments -->
         <div class="assessment-section">
             <div class="section-title">State Assessments</div>
@@ -424,7 +421,7 @@
             </table>
             </div>
         </div>
- 
+
         <!-- District Assessments -->
         <div class="assessment-section">
             <div class="section-title">District Assessments <span class="section-note">(windows proposed — pending district confirmation)</span></div>
@@ -560,7 +557,7 @@
             </table>
             </div>
         </div>
- 
+
         <!-- Special Population Assessments -->
         <div class="assessment-section">
             <div class="section-title">Special Population Assessments</div>
@@ -621,7 +618,7 @@
             </table>
             </div>
         </div>
- 
+
         <!-- College & Career Readiness -->
         <div class="assessment-section">
             <div class="section-title">College &amp; Career Readiness Assessments</div>
@@ -669,7 +666,7 @@
             </table>
             </div>
         </div>
- 
+
         <!-- AP Exam Schedule -->
         <div class="assessment-section">
             <div class="section-title">AP Exam Schedule 2026-2027 <span class="section-note">(Grades 9-12)</span></div>
@@ -738,7 +735,7 @@
             </div>
             <p class="ap-note">AP Exams are administered over two weeks, May 3-14, 2027, per the official College Board schedule. For most schools in New Jersey, Session 1 begins at 8:00 AM and Session 2 at 12:00 PM. Late testing: May 17-21, 2027.</p>
         </div>
- 
+
         <!-- National Assessment -->
         <div class="assessment-section">
             <div class="section-title">National Assessment</div>
@@ -770,7 +767,7 @@
             </table>
             </div>
         </div>
- 
+
         <div class="info-box">
             <h3>Important Information for Parents/Guardians</h3>
             <ul>
@@ -781,11 +778,11 @@
                 <li><strong>Questions:</strong> Contact your school's test coordinator or guidance office</li>
             </ul>
         </div>
- 
+
         <div class="info-box">
             <strong>Important Notice:</strong> This calendar is subject to change. While we strive to maintain accuracy, dates and events may be adjusted due to unforeseen circumstances or administrative decisions. We recommend checking for updates regularly and confirming important dates as they approach. Yellow-highlighted windows are proposed or pending confirmation and will be finalized prior to the October 1, 2026 publication.
         </div>
- 
+
         <div class="footer">
             <p><strong>Last Updated:</strong> August 26, 2026</p>
             <p>This calendar fulfills the notification requirements of N.J.S.A. 18A:7C-6.6</p>
