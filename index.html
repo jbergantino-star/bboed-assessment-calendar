@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Calendar 2025-2026 - Bayonne Board of Education</title>
+    <title>Assessment Calendar 2026-2027 - Bayonne Board of Education</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: white;
             color: #000;
             line-height: 1.6;
         }
-        
+
         .print-button {
             position: fixed;
             top: 20px;
@@ -33,17 +33,17 @@
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        
+
         .print-button:hover {
             background: #8B3A52;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         .header {
             background: #6B2737;
             color: white;
@@ -51,17 +51,17 @@
             text-align: center;
             margin: -20px -20px 30px -20px;
         }
-        
+
         .header h1 {
             font-size: 36px;
             margin-bottom: 10px;
         }
-        
+
         .header .subtitle {
             font-size: 20px;
             margin-bottom: 20px;
         }
-        
+
         .compliance-box {
             background: rgba(255,255,255,0.1);
             border: 2px solid rgba(255,255,255,0.3);
@@ -69,7 +69,7 @@
             padding: 15px;
             margin-top: 20px;
         }
-        
+
         .date-key-box {
             background: #FFE6E6;
             border-left: 5px solid #6B2737;
@@ -78,12 +78,20 @@
             border-radius: 5px;
             text-align: center;
         }
-        
+
         .date-key-box strong {
             font-size: 18px;
             color: #6B2737;
         }
-        
+
+        .legend-note {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+
         .school-links-section {
             background: #6B2737;
             color: white;
@@ -92,12 +100,12 @@
             border-radius: 10px;
             text-align: center;
         }
-        
+
         .school-links-section h2 {
             font-size: 24px;
             margin-bottom: 15px;
         }
-        
+
         .link-buttons {
             display: flex;
             justify-content: center;
@@ -105,7 +113,7 @@
             margin-top: 25px;
             flex-wrap: wrap;
         }
-        
+
         .school-link {
             background: white;
             color: #6B2737;
@@ -117,16 +125,16 @@
             min-width: 280px;
             transition: all 0.3s;
         }
-        
+
         .school-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
-        
+
         .assessment-section {
             margin: 40px 0;
         }
-        
+
         .section-title {
             background: #6B2737;
             color: white;
@@ -135,15 +143,27 @@
             font-weight: bold;
             border-radius: 8px 8px 0 0;
         }
-        
+
+        .section-title .section-note {
+            font-size: 14px;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             background: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             table-layout: fixed;
+            min-width: 900px;
         }
-        
+
         th {
             background: #E8E8E8;
             padding: 12px;
@@ -152,21 +172,21 @@
             border: 1px solid #ccc;
             font-size: 14px;
         }
-        
+
         td {
             padding: 10px;
             border: 1px solid #ddd;
             font-size: 13px;
         }
-        
+
         tr:nth-child(even) {
             background: #f9f9f9;
         }
-        
+
         tr:hover {
             background: #f0f0f0;
         }
-        
+
         .date-range {
             background: #F5E6E8;
             color: #6B2737;
@@ -177,7 +197,13 @@
             margin: 2px 0;
             white-space: nowrap;
         }
-        
+
+        .date-range.proposed {
+            background: #FFF2B2;
+            color: #6B4A00;
+            border: 1px solid #E6C200;
+        }
+
         .grade-level {
             background: #E8E8E8;
             padding: 2px 6px;
@@ -185,16 +211,24 @@
             display: inline-block;
             margin: 1px;
         }
-        
+
+        .status-confirmed {
+            display: block;
+            font-size: 11px;
+            color: #1F6F54;
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
         a {
             color: #6B2737;
             text-decoration: none;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
-        
+
         .info-box {
             background: #F5F5F5;
             padding: 20px;
@@ -202,38 +236,62 @@
             border-left: 4px solid #6B2737;
             border-radius: 5px;
         }
-        
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .info-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .ap-note {
+            font-size: 13px;
+            padding: 12px 4px 0 4px;
+            font-style: italic;
+        }
+
         .footer {
             background: #E8E8E8;
             padding: 30px;
             text-align: center;
             margin: 40px -20px -20px -20px;
         }
-        
+
         @media print {
             .print-button {
                 display: none !important;
             }
-            
+
             body {
                 font-size: 11pt;
             }
-            
+
             .header, .school-links-section, .section-title {
                 background: #6B2737 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
                 color: white !important;
             }
-            
+
+            .date-range, .date-range.proposed, .grade-level, .date-key-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .table-scroll {
+                overflow-x: visible;
+            }
+
+            table {
+                min-width: 0;
+                page-break-inside: auto;
+            }
+
             .assessment-section {
                 page-break-inside: avoid;
             }
-            
-            table {
-                page-break-inside: auto;
-            }
-            
+
             tr {
                 page-break-inside: avoid;
             }
@@ -244,121 +302,139 @@
     <button class="print-button" onclick="window.print()">
         📄 Click Here to Save as PDF
     </button>
-    
+
     <div class="container">
         <div class="header">
-            <h1>Assessment Calendar 2025-2026</h1>
+            <h1>Assessment Calendar 2026-2027</h1>
             <div class="subtitle">Bayonne Board of Education</div>
             <div class="compliance-box">
                 <strong>N.J.S.A. 18A:7C-6.6 Compliance Notice:</strong><br>
-                This calendar provides required notification of all statewide and district assessments for the 2025-2026 school year. Published October 1, 2025.
+                This calendar provides required notification of all statewide and district assessments for the 2026-2027 school year. To be published by October 1, 2026.
             </div>
         </div>
-        
+
         <div class="date-key-box">
             <strong>📅 DATE KEY: F = Fall | W = Winter | S = Spring/Summer</strong>
+            <span class="legend-note">
+                Windows shown in <span class="date-range proposed">yellow</span> are <strong>proposed</strong> or pending confirmation and will be finalized prior to the October 1, 2026 publication.
+            </span>
         </div>
-        
+
         <div class="school-links-section">
             <h2>📚 School-Specific Assessment Administration Schedules 📚</h2>
             <p>For comprehensive information including precise testing dates, designated testing times, specific subject areas, and detailed grade-level requirements for your child's school, please consult the appropriate school-specific assessment calendar:</p>
             <div class="link-buttons">
-                <a href="https://drive.google.com/file/d/1trBWxV1cGnzR9ESQgVao-qHEUl_RuuP8/view?usp=sharing" target="_blank" class="school-link">
+                <!-- TODO: replace href="#" below with the 2026-27 Elementary Google Drive share link -->
+                <a href="#" target="_blank" class="school-link">
                     📘 Elementary Assessment Calendar<br>
-                    BBOED 2025-2026 - Public Edition<br>
+                    BBOED 2026-2027 - Public Edition<br>
                     <small>(Grades K-8)</small>
                 </a>
-                <a href="https://drive.google.com/file/d/1ME3UR-Pv1sCaKaztgmVcnrYquLBLxAQe/view?usp=drive_link" target="_blank" class="school-link">
+                <!-- TODO: replace href="#" below with the 2026-27 High School Google Drive share link -->
+                <a href="#" target="_blank" class="school-link">
                     📕 High School Assessment Calendar<br>
-                    BBOED 2025-2026 - Public Edition<br>
+                    BBOED 2026-2027 - Public Edition<br>
                     <small>(Grades 9-12)</small>
                 </a>
             </div>
         </div>
-        
+
         <div class="info-box">
-            <strong>Important Notice:</strong> This calendar is subject to change. Dates may be adjusted due to unforeseen circumstances or administrative decisions. Please check for updates regularly and confirm important dates as they approach.
+            <strong>Important Notice:</strong> This calendar is subject to change. While we strive to maintain accuracy, dates and events may be adjusted due to unforeseen circumstances or administrative decisions. We recommend checking for updates regularly and confirming important dates as they approach.
         </div>
-        
+
         <!-- State Assessments -->
         <div class="assessment-section">
             <div class="section-title">State Assessments</div>
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
-                        <th width="14%">Assessment</th>
-                        <th width="13%">Subject(s)</th>
-                        <th width="10%">Grade Level(s)</th>
-                        <th width="27%">Testing Window</th>
+                        <th width="16%">Assessment</th>
+                        <th width="12%">Subject(s)</th>
+                        <th width="13%">Grade Level(s)</th>
+                        <th width="23%">Testing Window</th>
                         <th width="15%">Requirement</th>
                         <th width="21%">Resources</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>NJGPA</strong></td>
-                        <td>ELA & Math</td>
+                        <td><strong>NJGPA (Fall)</strong></td>
+                        <td>ELA &amp; Math</td>
                         <td><span class="grade-level">11-12</span></td>
-                        <td><span class="date-range">Oct 6-17, 2025</span></td>
+                        <td><span class="date-range">Oct 13 - Oct 28, 2026</span></td>
                         <td>State - Graduation</td>
                         <td><a href="https://nj.mypearsonsupport.com/ForParent/" target="_blank">NJGPA Parent Resources</a></td>
                     </tr>
                     <tr>
-                        <td><strong>NJGPA-Adaptive</strong></td>
-                        <td>ELA & Math</td>
+                        <td><strong>NJSLA-Adaptive (Fall Block)</strong></td>
+                        <td>ELA &amp; Math</td>
+                        <td>ELA: <span class="grade-level">9</span><br>Math: <span class="grade-level">9-12</span></td>
+                        <td><span class="date-range">Nov 30 - Dec 16, 2026</span></td>
+                        <td>Federal - Accountability</td>
+                        <td><a href="https://www.nj.gov/education/assessment/" target="_blank">NJ DOE Assessment Info</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>NJGPA-Adaptive (Spring)</strong></td>
+                        <td>ELA &amp; Math</td>
                         <td><span class="grade-level">11-12</span></td>
-                        <td>
-                            <span class="date-range">F: Oct 27 - Nov 14, 2025</span><br>
-                            <span class="date-range">S: Mar 16-27, 2026</span>
-                        </td>
+                        <td><span class="date-range">Mar 1 - Mar 19, 2027</span></td>
                         <td>State - Graduation</td>
                         <td><a href="https://www.nj.gov/education/assessment/" target="_blank">NJ DOE Assessment Info</a></td>
                     </tr>
                     <tr>
-                        <td><strong>NJSLA-Adaptive</strong></td>
-                        <td>ELA & Math</td>
-                        <td><span class="grade-level">3-12</span></td>
-                        <td>
-                            <span class="date-range">F: Oct 27 - Nov 14, 2025</span><br>
-                            <span class="date-range">S: Apr 27 - May 29, 2026</span>
-                        </td>
+                        <td><strong>NJSLA-Adaptive (Spring)</strong></td>
+                        <td>ELA &amp; Math</td>
+                        <td>ELA: <span class="grade-level">3-9</span><br>Math: <span class="grade-level">3-12</span></td>
+                        <td><span class="date-range">Apr 19 - May 21, 2027</span></td>
                         <td>Federal - Accountability</td>
                         <td><a href="https://www.nj.gov/education/assessment/resources/" target="_blank">NJSLA Resources</a></td>
                     </tr>
                     <tr>
-                        <td><strong>NJSLA Science</strong></td>
+                        <td><strong>NJSLA-Science</strong></td>
                         <td>Science</td>
                         <td>
                             <span class="grade-level">5</span>
                             <span class="grade-level">8</span>
                             <span class="grade-level">11</span>
                         </td>
-                        <td><span class="date-range">Apr 27 - May 29, 2026</span></td>
+                        <td><span class="date-range">Apr 19 - May 21, 2027</span></td>
                         <td>Federal - Accountability</td>
                         <td><a href="https://www.nj.gov/education/assessment/resources/" target="_blank">NJSLA Science Resources</a></td>
                     </tr>
                     <tr>
                         <td><strong>Portfolio Appeals</strong></td>
-                        <td>ELA & Math</td>
+                        <td>ELA &amp; Math</td>
                         <td><span class="grade-level">12</span></td>
-                        <td><span class="date-range">Jan 6 - May 1, 2026</span></td>
+                        <td><span class="date-range">Jan 4 - May 3, 2027</span></td>
                         <td>State - Graduation</td>
                         <td><a href="https://www.nj.gov/education/assessment/portfolio/" target="_blank">Portfolio Appeals Process</a></td>
                     </tr>
+                    <tr>
+                        <td><strong>NJGPA-Adaptive (Summer)</strong></td>
+                        <td>ELA &amp; Math</td>
+                        <td><span class="grade-level">11-12</span></td>
+                        <td><span class="date-range">Jul 19 - Aug 3, 2027</span></td>
+                        <td>State - Graduation</td>
+                        <td><a href="https://www.nj.gov/education/assessment/" target="_blank">NJ DOE Assessment Info</a></td>
+                    </tr>
                 </tbody>
             </table>
+            </div>
         </div>
-        
+
         <!-- District Assessments -->
         <div class="assessment-section">
-            <div class="section-title">District Assessments</div>
+            <div class="section-title">District Assessments <span class="section-note">(windows proposed — pending district confirmation)</span></div>
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
-                        <th width="14%">Assessment</th>
-                        <th width="13%">Subject(s)</th>
-                        <th width="10%">Grade Level(s)</th>
-                        <th width="27%">Testing Window</th>
+                        <th width="16%">Assessment</th>
+                        <th width="12%">Subject(s)</th>
+                        <th width="13%">Grade Level(s)</th>
+                        <th width="23%">Testing Window</th>
                         <th width="15%">Requirement</th>
                         <th width="21%">Resources</th>
                     </tr>
@@ -366,12 +442,12 @@
                 <tbody>
                     <tr>
                         <td><strong>i-Ready</strong></td>
-                        <td>ELA, Math & Spanish Reading</td>
+                        <td>ELA, Math &amp; Spanish Reading</td>
                         <td><span class="grade-level">K-8</span></td>
                         <td>
-                            <span class="date-range">F: Sep 22 - Nov 19, 2025</span><br>
-                            <span class="date-range">W: Dec 8, 2025 - Feb 20, 2026</span><br>
-                            <span class="date-range">S: Mar 10 - Apr 27, 2026</span>
+                            <span class="date-range proposed">F: Sep 8 - Nov 13, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 5 - Feb 26, 2027</span><br>
+                            <span class="date-range proposed">S: Apr 5 - Jun 16, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="http://i-readycentral.com/familycenter/" target="_blank">i-Ready Family Center</a></td>
@@ -381,9 +457,8 @@
                         <td>Reading</td>
                         <td><span class="grade-level">K-3</span></td>
                         <td>
-                            <span class="date-range">F: Sep 8-22, 2025</span><br>
-                            <span class="date-range">W: Jan 26 - Feb 12, 2026</span><br>
-                            <span class="date-range">S: Apr 28 - May 1, 2026</span>
+                            <span class="date-range proposed">F: Sep 8 - 22, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 5 - 19, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="http://i-readycentral.com/familycenter/" target="_blank">i-Ready Resources</a></td>
@@ -393,73 +468,111 @@
                         <td>Reading Screening</td>
                         <td><span class="grade-level">K-3</span></td>
                         <td>
-                            <span class="date-range">F: Sep 30 - Oct 3, 2025</span><br>
-                            <span class="date-range">W: Feb 17-24, 2026</span><br>
-                            <span class="date-range">S: May 4-8, 2026</span>
+                            <span class="date-range proposed">F: Sep 23 - Oct 8, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 20 - 27, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="http://i-readycentral.com/familycenter/" target="_blank">i-Ready Dyslexia Info</a></td>
                     </tr>
                     <tr>
                         <td><strong>LinkIt! K</strong></td>
-                        <td>ELA & Math</td>
+                        <td>ELA &amp; Math</td>
                         <td><span class="grade-level">K</span></td>
-                        <td><span class="date-range">F: Sep 16 - Oct 31, 2025</span></td>
+                        <td><span class="date-range proposed">F: Sep 16 - Oct 16, 2026</span></td>
                         <td>District</td>
                         <td><a href="https://www.linkit.com/" target="_blank">LinkIt! Platform</a></td>
                     </tr>
                     <tr>
-                        <td><strong>LinkIt! Science</strong></td>
+                        <td><strong>LinkIt! Science (Elementary)</strong></td>
                         <td>Science</td>
-                        <td><span class="grade-level">3-9</span></td>
+                        <td><span class="grade-level">3-8</span></td>
                         <td>
-                            <span class="date-range">F: Sep 26 - Oct 1, 2025</span><br>
-                            <span class="date-range">W: Jan 12-15, 2026</span><br>
-                            <span class="date-range">S: Mar 16-19, 2026</span>
+                            <span class="date-range proposed">F: Sep 14 - 15, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 11 - 12, 2027</span><br>
+                            <span class="date-range proposed">S: Apr 9 - 12, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="https://www.linkit.com/" target="_blank">LinkIt! Platform</a></td>
                     </tr>
                     <tr>
-                        <td><strong>ImgLrn</strong></td>
-                        <td>ELA & Math</td>
-                        <td><span class="grade-level">9</span></td>
+                        <td><strong>LinkIt! Science (High School)</strong></td>
+                        <td>Science</td>
+                        <td><span class="grade-level">9-10</span></td>
                         <td>
-                            <span class="date-range">F: Sep 22-26, 2025</span><br>
-                            <span class="date-range">W: Jan 6-28, 2026</span><br>
-                            <span class="date-range">S: Mar 10-16, 2026</span>
+                            <span class="date-range proposed">F: Sep 21 - 22, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 11 - 12, 2027</span><br>
+                            <span class="date-range proposed">S: Mar 15 - 16, 2027</span>
+                        </td>
+                        <td>District</td>
+                        <td><a href="https://www.linkit.com/" target="_blank">LinkIt! Platform</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ImgLrn (Elementary)</strong></td>
+                        <td>ELA &amp; Math</td>
+                        <td><span class="grade-level">8</span></td>
+                        <td>
+                            <span class="date-range proposed">F: Sep 10 - 11, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 7 - 8, 2027</span><br>
+                            <span class="date-range proposed">S: Apr 7 - 8, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="https://www.imaginelearning.com/" target="_blank">Imagine Learning</a></td>
                     </tr>
                     <tr>
-                        <td><strong>District Assessments (DA)</strong></td>
-                        <td>Various Subjects</td>
-                        <td><span class="grade-level">3-12</span></td>
+                        <td><strong>ImgLrn (High School)</strong></td>
+                        <td>ELA &amp; Math</td>
+                        <td><span class="grade-level">9</span></td>
                         <td>
-                            <span class="date-range">F: Oct 21 - Dec 3, 2025</span><br>
-                            <span class="date-range">W: Jan 21 - Mar 12, 2026</span><br>
-                            <span class="date-range">S: Mar 30 - Jun 3, 2026</span>
+                            <span class="date-range proposed">F: Sep 14 - 18, 2026</span><br>
+                            <span class="date-range proposed">W: Jan 5 - 8, 2027</span><br>
+                            <span class="date-range proposed">S: Mar 9 - 12, 2027</span>
+                        </td>
+                        <td>District</td>
+                        <td><a href="https://www.imaginelearning.com/" target="_blank">Imagine Learning</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>District Assessments (Elementary)</strong></td>
+                        <td>Social Studies</td>
+                        <td><span class="grade-level">3-8</span></td>
+                        <td>
+                            <span class="date-range proposed">DA1: Dec 2, 2026</span><br>
+                            <span class="date-range proposed">DA2: Mar 10, 2027</span><br>
+                            <span class="date-range proposed">DA3: Jun 2, 2027</span>
+                        </td>
+                        <td>District</td>
+                        <td><a href="https://www.bboed.org" target="_blank">District Website</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>District Assessments (High School)</strong></td>
+                        <td>Various Subjects</td>
+                        <td><span class="grade-level">9-12</span></td>
+                        <td>
+                            <span class="date-range proposed">DA1: Oct 27 - 29, 2026</span><br>
+                            <span class="date-range proposed">DA2: Jan 20 - 22, 2027</span><br>
+                            <span class="date-range proposed">DA3: Apr 6 - 8, 2027</span><br>
+                            <span class="date-range proposed">DA4: Jun 2 - 4, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="https://www.bboed.org" target="_blank">District Website</a></td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
-        
+
         <!-- Special Population Assessments -->
         <div class="assessment-section">
             <div class="section-title">Special Population Assessments</div>
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
-                        <th width="14%">Assessment</th>
-                        <th width="14%">Subject(s)</th>
-                        <th width="10%">Grade Level(s)</th>
-                        <th width="28%">Testing Window</th>
-                        <th width="12%">Requirement</th>
-                        <th width="22%">Resources</th>
+                        <th width="16%">Assessment</th>
+                        <th width="12%">Subject(s)</th>
+                        <th width="13%">Grade Level(s)</th>
+                        <th width="23%">Testing Window</th>
+                        <th width="15%">Requirement</th>
+                        <th width="21%">Resources</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -467,58 +580,68 @@
                         <td><strong>ACCESS for ELLs</strong></td>
                         <td>English Language Proficiency</td>
                         <td><span class="grade-level">K-12</span></td>
-                        <td><span class="date-range">Feb 2 - Apr 3, 2026</span></td>
+                        <td><span class="date-range">Feb 1 - Apr 2, 2027</span></td>
                         <td>Federal - ELL</td>
                         <td><a href="https://wida.wisc.edu/assess/access" target="_blank">WIDA ACCESS Info</a></td>
                     </tr>
                     <tr>
-                        <td><strong>DLM</strong></td>
+                        <td><strong>DLM (Year End)</strong></td>
                         <td>ELA, Math, Science</td>
-                        <td>
-                            <span class="grade-level">5</span>
-                            <span class="grade-level">8</span>
-                            <span class="grade-level">11</span>
-                        </td>
-                        <td><span class="date-range">Apr 6 - May 29, 2026</span></td>
+                        <td>ELA/Math: <span class="grade-level">3-8</span> <span class="grade-level">11</span><br>Sci: <span class="grade-level">5</span> <span class="grade-level">8</span> <span class="grade-level">11</span></td>
+                        <td><span class="date-range">Apr 5 - May 28, 2027</span></td>
                         <td>Federal - Special Ed</td>
                         <td><a href="https://dynamiclearningmaps.org/newjersey" target="_blank">DLM New Jersey</a></td>
                     </tr>
                     <tr>
-                        <td><strong>SEL</strong></td>
+                        <td><strong>SEL (Elementary)</strong></td>
                         <td>Social-Emotional Learning</td>
                         <td><span class="grade-level">3-8</span></td>
                         <td>
-                            <span class="date-range">F: Oct 14-24, 2025</span><br>
-                            <span class="date-range">W: Feb 23-27, 2026</span><br>
-                            <span class="date-range">S: Apr 20 - May 28, 2026</span>
+                            <span class="date-range proposed">BOY: Oct 13 - 16, 2026</span><br>
+                            <span class="date-range proposed">MOY: Feb 22 - 26, 2027</span><br>
+                            <span class="date-range proposed">EOY: May 24 - 28, 2027</span>
+                        </td>
+                        <td>District</td>
+                        <td><a href="https://casel.org/fundamentals-of-sel/" target="_blank">SEL Resources</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEL (High School)</strong></td>
+                        <td>Social-Emotional Learning</td>
+                        <td><span class="grade-level">9</span></td>
+                        <td>
+                            <span class="date-range proposed">BOY: Oct 19 - 23, 2026</span><br>
+                            <span class="date-range proposed">MOY: Feb 22 - 25, 2027</span><br>
+                            <span class="date-range proposed">EOY: Apr 12 - 16, 2027</span>
                         </td>
                         <td>District</td>
                         <td><a href="https://casel.org/fundamentals-of-sel/" target="_blank">SEL Resources</a></td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
-        
+
         <!-- College & Career Readiness -->
         <div class="assessment-section">
-            <div class="section-title">College & Career Readiness Assessments</div>
+            <div class="section-title">College &amp; Career Readiness Assessments</div>
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
-                        <th width="14%">Assessment</th>
-                        <th width="14%">Subject(s)</th>
-                        <th width="10%">Grade Level(s)</th>
-                        <th width="28%">Testing Window</th>
-                        <th width="12%">Requirement</th>
-                        <th width="22%">Resources</th>
+                        <th width="16%">Assessment</th>
+                        <th width="12%">Subject(s)</th>
+                        <th width="13%">Grade Level(s)</th>
+                        <th width="23%">Testing Window</th>
+                        <th width="15%">Requirement</th>
+                        <th width="21%">Resources</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>SAT/PSAT</strong></td>
-                        <td>Math & Evidence-Based Reading/Writing</td>
+                        <td>Math &amp; Evidence-Based Reading/Writing</td>
                         <td><span class="grade-level">9-12</span></td>
-                        <td><span class="date-range">Oct 20 - Nov 28, 2025</span></td>
+                        <td><span class="date-range proposed">Oct 7, 2026 (tentative — pending College Board)</span></td>
                         <td>District</td>
                         <td><a href="https://satsuite.collegeboard.org/sat" target="_blank">SAT Suite Resources</a></td>
                     </tr>
@@ -526,7 +649,10 @@
                         <td><strong>AP Exams</strong></td>
                         <td>Various Subjects</td>
                         <td><span class="grade-level">9-12</span></td>
-                        <td><span class="date-range">May 6-24, 2026</span></td>
+                        <td>
+                            <span class="date-range">May 3 - 14, 2027</span>
+                            <span class="status-confirmed">CONFIRMED — official College Board schedule (see AP Exam Schedule below)</span>
+                        </td>
                         <td>Course Enrollment</td>
                         <td><a href="https://apstudents.collegeboard.org/" target="_blank">AP Student Resources</a></td>
                     </tr>
@@ -534,41 +660,116 @@
                         <td><strong>CogAT</strong></td>
                         <td>Cognitive Abilities</td>
                         <td><span class="grade-level">K-12</span></td>
-                        <td><span class="date-range">Jan 5-16, 2026</span></td>
+                        <td><span class="date-range proposed">Jan 19 - 29, 2027</span></td>
                         <td>District</td>
                         <td><a href="https://www.riversideinsights.com/solutions/cogat" target="_blank">CogAT Information</a></td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
-        
-        <!-- National Assessment -->
+
+        <!-- AP Exam Schedule -->
         <div class="assessment-section">
-            <div class="section-title">National Assessment</div>
+            <div class="section-title">AP Exam Schedule 2026-2027 <span class="section-note">(Grades 9-12)</span></div>
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
-                        <th width="14%">Assessment</th>
-                        <th width="14%">Subject(s)</th>
-                        <th width="10%">Grade Level(s)</th>
-                        <th width="28%">Testing Window</th>
-                        <th width="12%">Requirement</th>
-                        <th width="22%">Resources</th>
+                        <th width="16%">Date</th>
+                        <th width="42%">Session 1 (8:00 AM)</th>
+                        <th width="42%">Session 2 (12:00 PM)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mon, May 3</strong></td>
+                        <td>AP Human Geography; AP Physics C: Mechanics</td>
+                        <td>AP Biology; AP Italian Language and Culture</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tue, May 4</strong></td>
+                        <td>AP U.S. Government and Politics</td>
+                        <td>AP European History; AP Microeconomics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wed, May 5</strong></td>
+                        <td>AP English Literature and Composition</td>
+                        <td>AP Physics 1: Algebra-Based; AP Physics C: E&amp;M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Thu, May 6</strong></td>
+                        <td>AP Physics 2: Algebra-Based; AP World History: Modern; AP French Language and Culture</td>
+                        <td>AP Chemistry</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fri, May 7</strong></td>
+                        <td>AP U.S. History</td>
+                        <td>AP Macroeconomics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mon, May 10</strong></td>
+                        <td>AP Calculus AB; AP Calculus BC</td>
+                        <td>AP Music Theory</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tue, May 11</strong></td>
+                        <td>AP Precalculus</td>
+                        <td>AP Statistics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wed, May 12</strong></td>
+                        <td>AP English Language and Composition</td>
+                        <td>AP Computer Science A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Thu, May 13</strong></td>
+                        <td>AP Spanish Language and Culture</td>
+                        <td>AP Environmental Science</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fri, May 14</strong></td>
+                        <td>AP Computer Science Principles</td>
+                        <td>AP Latin; AP Psychology</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <p class="ap-note">AP Exams are administered over two weeks, May 3-14, 2027, per the official College Board schedule. For most schools in New Jersey, Session 1 begins at 8:00 AM and Session 2 at 12:00 PM. Late testing: May 17-21, 2027.</p>
+        </div>
+
+        <!-- National Assessment -->
+        <div class="assessment-section">
+            <div class="section-title">National Assessment</div>
+            <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="16%">Assessment</th>
+                        <th width="12%">Subject(s)</th>
+                        <th width="13%">Grade Level(s)</th>
+                        <th width="23%">Testing Window</th>
+                        <th width="15%">Requirement</th>
+                        <th width="21%">Resources</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>NAEP</strong></td>
-                        <td>Reading & Math</td>
-                        <td><span class="grade-level">8</span> <em>(JMB School)</em></td>
-                        <td><span class="date-range">Jan 26 - Mar 20, 2026</span></td>
+                        <td>Science</td>
+                        <td><span class="grade-level">8</span> <em>(if school selected)</em></td>
+                        <td>
+                            <span class="date-range">Jan 25 - Mar 12, 2027</span>
+                            <span class="status-confirmed">Only if selected by the NAEP State Coordinator</span>
+                        </td>
                         <td>Federal - Selected Schools</td>
                         <td><a href="https://www.nj.gov/education/assessment/naep/index.shtml" target="_blank">NAEP Information</a></td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
-        
+
         <div class="info-box">
             <h3>Important Information for Parents/Guardians</h3>
             <ul>
@@ -579,9 +780,13 @@
                 <li><strong>Questions:</strong> Contact your school's test coordinator or guidance office</li>
             </ul>
         </div>
-        
+
+        <div class="info-box">
+            <strong>Important Notice:</strong> This calendar is subject to change. While we strive to maintain accuracy, dates and events may be adjusted due to unforeseen circumstances or administrative decisions. We recommend checking for updates regularly and confirming important dates as they approach. Yellow-highlighted windows are proposed or pending confirmation and will be finalized prior to the October 1, 2026 publication.
+        </div>
+
         <div class="footer">
-            <p><strong>Last Updated:</strong> September 9, 2025</p>
+            <p><strong>Last Updated:</strong> August 26, 2026</p>
             <p>This calendar fulfills the notification requirements of N.J.S.A. 18A:7C-6.6</p>
             <p>For additional information, visit: <a href="https://www.nj.gov/education/assessment/" target="_blank">www.nj.gov/education/assessment</a></p>
             <p>District Website: <a href="https://www.bboed.org" target="_blank">www.bboed.org</a></p>
